@@ -15,6 +15,10 @@ ADMINUSER="admin"
 PASSKEY=""
 TEAM="0"
 PASSWORD="password1"
+DNSNAME = "foldingathome"
+RESOURCEGROUPLOCATION = "westeurope"
+
+CLIENTURL = "$DNSNAME.$RESOURCEGROUPLOCATION.cloudapp.azure.com"
 
 for i in "$@"
 do
@@ -71,13 +75,20 @@ wget https://download.foldingathome.org/releases/public/release/fahclient/debian
 
 dpkg -i --force-depends latest.deb
 
-openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=WA/L=REDMOND/O=Dis/CN=www.example.com" -keyout /etc/nginx/fah.key  -out /etc/nginx/fah.cert
+#openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=WA/L=REDMOND/O=Dis/CN=www.example.com" -keyout /etc/nginx/fah.key  -out /etc/nginx/fah.cert
+
+#Install Certbot
+apt-get update
+apt-get install software-properties-common
+add-apt-repository universe
+add-apt-repository ppa:certbot/certbot
+apt-get update
 
 htpasswd -b -c /etc/nginx/.htpasswd $ADMINUSER $PASSWORD
 
 echo "server {
 	listen              443 ssl;
-	server_name         www.example.com;
+	server_name         $CLIENTURL;
 	keepalive_timeout   70;
 
 	ssl_certificate     /etc/nginx/fah.cert;
@@ -92,6 +103,9 @@ echo "server {
 	}
 }
 " > /etc/nginx/sites-available/default
+
+#Install SSL Certs and let certbot update the nginx config
+certbot -n -d $CLIENTURL --nginx
 
 systemctl restart nginx
 

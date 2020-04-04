@@ -216,8 +216,8 @@
                 "typeHandlerVersion": "2.0",
                 "autoUpgradeMinorVersion": true,
                 "settings": {
-                    "fileUris": "[split('https://raw.githubusercontent.com/theonemule/fahclient-azure-vm/master/install.sh', ' ')]",
-                    "commandToExecute": "[concat('bash install.sh --user=', parameters('fahUser'), ' --team=', parameters('fahTeam'), ' --passkey=', parameters('fahPasskey'), ' --password=', parameters('adminPassword'), ' --adminuser=', parameters('adminUsername'))]"
+                    "fileUris": "[split('https://raw.githubusercontent.com/m0rgenthau/fahclient-azure-vm/master/install.sh', ' ')]",
+                    "commandToExecute": "[concat('bash install.sh --user=', parameters('fahUser'), ' --team=', parameters('fahTeam'), ' --passkey=', parameters('fahPasskey'), ' --password=', parameters('adminPassword'), ' --adminuser=', parameters('adminUsername'), ' --dnsname=', parameters('adminUsername'), ' --resourcegrouplocation=', resourceGroup().location)]"
                 }
             }
         },
