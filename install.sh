@@ -1,7 +1,10 @@
 #!/bin/bash
 
 apt update
-apt install -y ubuntu-drivers-common apache2-utils nginx ocl-icd-opencl-dev
+apt install -y ubuntu-drivers-common apache2-utils nginx ocl-icd-opencl-dev software-properties-common certbot python-certbot-nginx
+add-apt-repository universe
+add-apt-repository ppa:certbot/certbot
+
 
 export DEBIAN_FRONTEND=noninteractive
 export DEBCONF_NONINTERACTIVE_SEEN=true
@@ -74,14 +77,8 @@ wget https://download.foldingathome.org/releases/public/release/fahclient/debian
 
 dpkg -i --force-depends latest.deb
 
-#openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=WA/L=REDMOND/O=Dis/CN=www.example.com" -keyout /etc/nginx/fah.key  -out /etc/nginx/fah.cert
+openssl req -new -newkey rsa:4096 -days 3650 -nodes -x509 -subj "/C=US/ST=WA/L=REDMOND/O=Dis/CN=www.example.com" -keyout /etc/nginx/fah.key  -out /etc/nginx/fah.cert
 
-#Install Certbot
-apt-get update
-apt-get install software-properties-common
-add-apt-repository universe
-add-apt-repository ppa:certbot/certbot
-apt-get update
 
 htpasswd -b -c /etc/nginx/.htpasswd $ADMINUSER $PASSWORD
 
