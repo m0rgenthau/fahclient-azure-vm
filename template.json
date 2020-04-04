@@ -83,7 +83,7 @@
         "publicIPAddressName": "[concat(parameters('vmName'),'PublicIP')]",
         "publicIPAddressType": "Dynamic",
         "vmStorageAccountContainerName": "vhds",
-        "vmName": "parameters('vmName')",
+        "vmName": "[parameters('vmName')]",
         "virtualNetworkName": "fahclientVNET",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
