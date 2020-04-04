@@ -15,10 +15,9 @@ ADMINUSER="admin"
 PASSKEY=""
 TEAM="0"
 PASSWORD="password1"
-DNSNAME = "foldingathome"
-RESOURCEGROUPLOCATION = "westeurope"
-
-CLIENTURL = "$DNSNAME.$RESOURCEGROUPLOCATION.cloudapp.azure.com"
+DNSNAME="foldingathome"
+RESOURCEGROUPLOCATION="westeurope"
+CLIENTURL="$DNSNAME.$RESOURCEGROUPLOCATION.cloudapp.azure.com"
 
 for i in "$@"
 do
@@ -105,6 +104,7 @@ echo "server {
 " > /etc/nginx/sites-available/default
 
 #Install SSL Certs and let certbot update the nginx config
+echo "Creating certificate cor $CLIENTURL"
 certbot -n -d $CLIENTURL --nginx
 
 systemctl restart nginx
