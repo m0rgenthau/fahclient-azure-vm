@@ -1,13 +1,281 @@
 {
-    "status": "Failed",
-    "error": {
-        "code": "ResourceDeploymentFailure",
-        "message": "The resource operation completed with terminal provisioning state 'Failed'.",
-        "details": [
-            {
-                "code": "VMExtensionProvisioningError",
-                "message": "VM has reported a failure when processing extension 'fahclient-setup'. Error message: \"Enable failed: failed to execute command: command terminated with exit status=1\n[stdout]\ndri2-0-dev:amd64 (1.13-2~ubuntu18.04) ...\r\nSetting up libxcb-render0-dev:amd64 (1.13-2~ubuntu18.04) ...\r\nSetting up libegl1:amd64 (1.0.0-2ubuntu2.3) ...\r\nSetting up ubuntu-drivers-common (1:0.5.2.5) ...\r\nCreated symlink /etc/systemd/system/display-manager.service.wants/gpu-manager.service → /lib/systemd/system/gpu-manager.service.\r\nCreated symlink /etc/systemd/system/oem-config.service.wants/gpu-manager.service → /lib/systemd/system/gpu-manager.service.\r\nSetting up libxcb-dri3-dev:amd64 (1.13-2~ubuntu18.04) ...\r\nSetting up libxext-dev:amd64 (2:1.3.3-1) ...\r\nSetting up libxcb-shape0-dev:amd64 (1.13-2~ubuntu18.04) ...\r\nSetting up libglx-mesa0:amd64 (19.2.8-0ubuntu0~18.04.3) ...\r\nSetting up libxcb-randr0-dev:amd64 (1.13-2~ubuntu18.04) ...\r\nSetting up mesa-common-dev:amd64 (19.2.8-0ubuntu0~18.04.3) ...\r\nSetting up libxcb-xfixes0-dev:amd64 (1.13-2~ubuntu18.04) ...\r\nSetting up libnginx-mod-http-image-filter (1.14.0-0ubuntu1.7) ...\r\nSetting up nginx-core (1.14.0-0ubuntu1.7) ...\r\nSetting up libxcb-present-dev:amd64 (1.13-2~ubuntu18.04) ...\r\nSetting up libglx0:amd64 (1.0.0-2ubuntu2.3) ...\r\nSetting up nginx (1.14.0-0ubuntu1.7) ...\r\nSetting up libgl1:amd64 (1.0.0-2ubuntu2.3) ...\r\nSetting up libglvnd-dev:amd64 (1.0.0-2ubuntu2.3) ...\r\nSetting up libgl1-mesa-dev:amd64 (19.2.8-0ubuntu0~18.04.3) ...\r\nProcessing triggers for systemd (237-3ubuntu10.39) ...\r\nProcessing triggers for man-db (2.8.3-2ubuntu0.1) ...\r\nProcessing triggers for ufw (0.36-0ubuntu0.18.04.1) ...\r\nProcessing triggers for ureadahead (0.100.0-21) ...\r\nProcessing triggers for libc-bin (2.27-3ubuntu1) ...\r\nNo drivers found for installation.\nSelecting previously unselected package fahclient.\n(Reading database ... 77313 files and directories currently installed.)\nPreparing to unpack latest.deb ...\nAdding system user fahclient...done\nUnpacking fahclient (7.5.1) ...\nSetting up fahclient (7.5.1) ...\nProcessing triggers for ureadahead (0.100.0-21) ...\nProcessing triggers for systemd (237-3ubuntu10.39) ...\nProcessing triggers for mime-support (3.60ubuntu1) ...\nHit:1 http://azure.archive.ubuntu.com/ubuntu bionic InRelease\nHit:2 http://azure.archive.ubuntu.com/ubuntu bionic-updates InRelease\nHit:3 http://azure.archive.ubuntu.com/ubuntu bionic-backports InRelease\nHit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease\nReading package lists...\nReading package lists...\nBuilding dependency tree...\nReading state information...\nsoftware-properties-common is already the newest version (0.96.24.32.12).\nsoftware-properties-common set to manually installed.\nThe following packages were automatically installed and are no longer required:\n  grub-pc-bin linux-headers-4.15.0-91\nUse 'apt autoremove' to remove them.\n0 upgraded, 0 newly installed, 0 to remove and 3 not upgraded.\n'universe' distribution component is already enabled for all sources.\n This is the PPA for packages prepared by Debian Let's Encrypt Team and backported for Ubuntu.\n\nNote: Packages are only provided for currently supported Ubuntu releases.\n More info: https://launchpad.net/~certbot/+archive/ubuntu/certbot\nHit:1 http://azure.archive.ubuntu.com/ubuntu bionic InRelease\nHit:2 http://azure.archive.ubuntu.com/ubuntu bionic-updates InRelease\nHit:3 http://azure.archive.ubuntu.com/ubuntu bionic-backports InRelease\nHit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease\nGet:5 http://ppa.launchpad.net/certbot/certbot/ubuntu bionic InRelease [21.3 kB]\nGet:6 http://ppa.launchpad.net/certbot/certbot/ubuntu bionic/main amd64 Packages [8032 B]\nGet:7 http://ppa.launchpad.net/certbot/certbot/ubuntu bionic/main Translation-en [4176 B]\nFetched 33.5 kB in 1s (65.0 kB/s)\nReading package lists...\nHit:1 http://azure.archive.ubuntu.com/ubuntu bionic InRelease\nHit:2 http://azure.archive.ubuntu.com/ubuntu bionic-updates InRelease\nHit:3 http://azure.archive.ubuntu.com/ubuntu bionic-backports InRelease\nHit:4 http://security.ubuntu.com/ubuntu bionic-security InRelease\nHit:5 http://ppa.launchpad.net/certbot/certbot/ubuntu bionic InRelease\nReading package lists...\nCreating certificate cor foldingathome.westeurope.cloudapp.azure.com\n\n[stderr]\n... .......... .......... .......... 59%  109M 0s\n  2050K .......... .......... .......... .......... .......... 60%  104M 0s\n  2100K .......... .......... .......... .......... .......... 62%  118M 0s\n  2150K .......... .......... .......... .......... .......... 63%  130M 0s\n  2200K .......... .......... .......... .......... .......... 65%  107M 0s\n  2250K .......... .......... .......... .......... .......... 66%  117M 0s\n  2300K .......... .......... .......... .......... .......... 68%  102M 0s\n  2350K .......... .......... .......... .......... .......... 69%  105M 0s\n  2400K .......... .......... .......... .......... .......... 71%  110M 0s\n  2450K .......... .......... .......... .......... .......... 72%  121M 0s\n  2500K .......... .......... .......... .......... .......... 73%  127M 0s\n  2550K .......... .......... .......... .......... .......... 75%  111M 0s\n  2600K .......... .......... .......... .......... .......... 76%  102M 0s\n  2650K .......... .......... .......... .......... .......... 78% 93.4M 0s\n  2700K .......... .......... .......... .......... .......... 79%  139M 0s\n  2750K .......... .......... .......... .......... .......... 81% 72.9M 0s\n  2800K .......... .......... .......... .......... .......... 82%  154M 0s\n  2850K .......... .......... .......... .......... .......... 84%  113M 0s\n  2900K .......... .......... .......... .......... .......... 85%  127M 0s\n  2950K .......... .......... .......... .......... .......... 86% 96.5M 0s\n  3000K .......... .......... .......... .......... .......... 88% 1.58M 0s\n  3050K .......... .......... .......... .......... .......... 89%  143M 0s\n  3100K .......... .......... .......... .......... .......... 91%  130M 0s\n  3150K .......... .......... .......... .......... .......... 92%  104M 0s\n  3200K .......... .......... .......... .......... .......... 94% 94.4M 0s\n  3250K .......... .......... .......... .......... .......... 95%  161M 0s\n  3300K .......... .......... .......... .......... .......... 97%  108M 0s\n  3350K .......... .......... .......... .......... .......... 98%  703K 0s\n  3400K .......... .......... .......... .......... ........  100%  125M=0.8s\n\n2020-04-04 14:38:46 (4.15 MB/s) - ‘latest.deb’ saved [3531612/3531612]\n\nJob for FAHClient.service failed because the control process exited with error code.\nSee \"systemctl status FAHClient.service\" and \"journalctl -xe\" for details.\ninvoke-rc.d: initscript FAHClient, action \"start\" failed.\n● FAHClient.service - LSB: Folding@home Client\n   Loaded: loaded (/etc/init.d/FAHClient; generated)\n   Active: failed (Result: exit-code) since Sat 2020-04-04 14:38:49 UTC; 6ms ago\n     Docs: man:systemd-sysv-generator(8)\n  Process: 6377 ExecStart=/etc/init.d/FAHClient start (code=exited, status=1/FAILURE)\n    Tasks: 4 (limit: 19660)\n   CGroup: /system.slice/FAHClient.service\n           ├─6396 /usr/bin/FAHClient /etc/fahclient/config.xml --run-as fahclient --pid-file=/var/run/fahclient.pid --daemon\n           └─6399 /usr/bin/FAHClient --child --lifeline 6396 /etc/fahclient/config.xml --run-as fahclient --pid-file=/var/run/fahclient.pid --daemon\n\nApr 04 14:38:49 covidsucks1 systemd[1]: Starting LSB: Folding@home Client...\nApr 04 14:38:49 covidsucks1 FAHClient[6377]: Starting fahclient ... FAIL\nApr 04 14:38:49 covidsucks1 systemd[1]: FAHClient.service: Control process exited, code=exited status=1\nApr 04 14:38:49 covidsucks1 systemd[1]: FAHClient.service: Failed with result 'exit-code'.\nApr 04 14:38:49 covidsucks1 systemd[1]: Failed to start LSB: Folding@home Client.\n\nThe Folding@home client is now installed\n\nYou can access the Web interface by going to:\n\n  https://client.foldingathome.org/\n\nin a browser on this computer.\n\nFor information about configuring the Folding@home client for \nremote access please see the comments in:\n\n  /etc/fahclient/config.xml\n\n\nAdding password for user nuisance\ninstall.sh: line 108: certbot: command not found\nJob for nginx.service failed because the control process exited with error code.\nSee \"systemctl status nginx.service\" and \"journalctl -xe\" for details.\n\"\r\n\r\nMore information on troubleshooting is available at https://aka.ms/VMExtensionCSELinuxTroubleshoot "
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmName": {
+           "type": "String",
+            "metadata": {
+                "description": "Virtual Machine name, can match the public DNS Name."
+            } 
+        },
+        "dnsNameForPublicIP": {
+            "type": "String",
+            "metadata": {
+                "description": "The DNS prefix for the host. Must be unique on Azure."
             }
-        ]
+        },
+        "adminUsername": {
+            "type": "String",
+            "metadata": {
+                "description": "Username for the Virtual Machine."
+            }
+        },
+        "adminPassword": {
+            "type": "SecureString",
+            "metadata": {
+                "description": "Password for the Virtual Machine."
+            }
+        },
+        "fahUser": {
+            "defaultValue": "anonymous",
+            "type": "String",
+            "metadata": {
+                "description": "The user for the Folding@Home client. Leave anonymous if you want to donate anonymously."
+            }
+        },
+        "fahTeam": {
+            "defaultValue": "0",
+            "type": "String",
+            "metadata": {
+                "description": "The team number for the Folding@Home client. Not neccessary if you are not part of a F2H team."
+            }
+        },
+        "fahPasskey": {
+            "defaultValue": "",
+            "type": "String",
+            "metadata": {
+                "description": "The passkey for the Folding@Home client. Not neccessary if you don't care about recieving credit."
+            }
+        },		
+        "vmSize": {
+            "defaultValue": "Standard_NV6",
+            "allowedValues": [
+                "Standard_D1_v2",
+                "Standard_D2_v2",
+                "Standard_D3_v2",
+                "Standard_D4_v2",
+                "Standard_D5_v2",
+				"Standard_NV4as_v4",
+				"Standard_NV8as_v4",
+				"Standard_NV16as_v4",
+				"Standard_NV32as_v4",				
+                "Standard_NV6",
+                "Standard_NV12",
+                "Standard_NV24"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "The size of the VM you want. Use a D series for no GPU, and N series for GPU"
+            }
+        }
+    },
+    "variables": {
+        "storageAccountName": "[concat(uniquestring(resourceGroup().id),'storage')]",
+        "imagePublisher": "Canonical",
+        "imageOffer": "UbuntuServer",
+        "OSDiskName": "[concat(parameters('vmName'),'VHD')]",
+        "imageSKU": "18.04-LTS",
+        "nicName": "[concat(parameters('vmName'),'NIC')]",
+        "addressPrefix": "10.0.0.0/16",
+        "subnetName": "fahclientSubnet",
+        "subnetPrefix": "10.0.0.0/24",
+        "storageAccountType": "Standard_LRS",
+        "publicIPAddressName": "[concat(parameters('vmName'),'PublicIP')]",
+        "publicIPAddressType": "Dynamic",
+        "vmStorageAccountContainerName": "vhds",
+        "vmName": "parameters('vmName')",
+        "virtualNetworkName": "fahclientVNET",
+        "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
+        "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
+        "apiVersion": "2015-06-15"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "[variables('apiVersion')]",
+            "name": "[variables('storageAccountName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "accountType": "[variables('storageAccountType')]"
+            }
+        },
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "[variables('apiVersion')]",
+            "name": "[variables('publicIPAddressName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
+                "dnsSettings": {
+                    "domainNameLabel": "[parameters('dnsNameForPublicIP')]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "[variables('apiVersion')]",
+            "name": "[variables('virtualNetworkName')]",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "[variables('addressPrefix')]"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "[variables('subnetName')]",
+                        "properties": {
+                            "addressPrefix": "[variables('subnetPrefix')]"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkInterfaces",
+            "apiVersion": "[variables('apiVersion')]",
+            "name": "[variables('nicName')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Network/publicIPAddresses/', variables('publicIPAddressName'))]",
+                "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]",
+                "[concat('Microsoft.Network/networkSecurityGroups/', 'fahclient-nsg')]"
+            ],
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "publicIPAddress": {
+                                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName'))]"
+                            },
+                            "subnet": {
+                                "id": "[variables('subnetRef')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2016-09-01",
+            "name": "['fahclient-nsg']",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "securityRules": [
+                    {
+                        "name": "default-allow-ssh",
+                        "properties": {
+                            "priority": 1000,
+                            "sourceAddressPrefix": "*",
+                            "protocol": "TCP",
+                            "destinationPortRange": "22",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*"
+                        }
+                    },
+                    {
+                        "name": "default-allow-fahremote",
+                        "properties": {
+                            "priority": 1001,
+                            "sourceAddressPrefix": "*",
+                            "protocol": "TCP",
+                            "destinationPortRange": "36330",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*"
+                        }
+                    },
+                    {
+                        "name": "default-allow-fahremoteweb",
+                        "properties": {
+                            "priority": 1002,
+                            "sourceAddressPrefix": "*",
+                            "protocol": "TCP",
+                            "destinationPortRange": "443",
+                            "access": "Allow",
+                            "direction": "Inbound",
+                            "sourcePortRange": "*",
+                            "destinationAddressPrefix": "*"
+                        }
+                    }					
+                ]
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "apiVersion": "['2015-06-15']",
+            "name": "[concat(variables('vmName'),'/', 'fahclient-setup')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', variables('vmName'))]"
+            ],
+            "properties": {
+                "publisher": "Microsoft.Azure.Extensions",
+                "type": "CustomScript",
+                "typeHandlerVersion": "2.0",
+                "autoUpgradeMinorVersion": true,
+                "settings": {
+                    "fileUris": "[split('https://raw.githubusercontent.com/m0rgenthau/fahclient-azure-vm/master/install.sh', ' ')]",
+                    "commandToExecute": "[concat('bash install.sh --user=', parameters('fahUser'), ' --team=', parameters('fahTeam'), ' --passkey=', parameters('fahPasskey'), ' --password=', parameters('adminPassword'), ' --adminuser=', parameters('adminUsername'), ' --dnsname=', parameters('adminUsername'), ' --resourcegrouplocation=', resourceGroup().location)]"
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2016-04-30-preview",
+            "name": "[variables('vmName')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "[concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]",
+                "[concat('Microsoft.Network/networkInterfaces/', variables('nicName'))]"
+            ],
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "[parameters('vmSize')]"
+                },
+                "osProfile": {
+                    "computerName": "[variables('vmName')]",
+                    "adminUsername": "[parameters('adminUsername')]",
+                    "adminPassword": "[parameters('adminPassword')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "[variables('imagePublisher')]",
+                        "offer": "[variables('imageOffer')]",
+                        "sku": "[variables('imageSKU')]",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "createOption": "FromImage"
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": "true",
+                        "storageUri": "[concat(reference(concat('Microsoft.Storage/storageAccounts/', variables('storageAccountName')), variables('apiVersion')).primaryEndpoints.blob)]"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "httpSite": {
+            "type": "String",
+            "value": "[concat('Conect via F@H Web: https://', parameters('dnsNameForPublicIP'), '.', resourceGroup().location, '.cloudapp.azure.com')]"
+        }
     }
 }
