@@ -2,6 +2,12 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "vmName": {
+           "type": "String",
+            "metadata": {
+                "description": "Virtual Machine name, can match the public DNS Name."
+            } 
+        },
         "dnsNameForPublicIP": {
             "type": "String",
             "metadata": {
@@ -67,17 +73,17 @@
         "storageAccountName": "[concat(uniquestring(resourceGroup().id),'storage')]",
         "imagePublisher": "Canonical",
         "imageOffer": "UbuntuServer",
-        "OSDiskName": "fahclient-vhd",
+        "OSDiskName": "[concat(parameters('vmName'),'VHD')]",
         "imageSKU": "18.04-LTS",
-        "nicName": "fahclientNic",
+        "nicName": "[concat(parameters('vmName'),'NIC')]",
         "addressPrefix": "10.0.0.0/16",
         "subnetName": "fahclientSubnet",
         "subnetPrefix": "10.0.0.0/24",
         "storageAccountType": "Standard_LRS",
-        "publicIPAddressName": "fahclientPublicIP",
+        "publicIPAddressName": "[concat(parameters('vmName'),'PublicIP')]",
         "publicIPAddressType": "Dynamic",
         "vmStorageAccountContainerName": "vhds",
-        "vmName": "fahclientVM",
+        "vmName": "parameters('vmName')",
         "virtualNetworkName": "fahclientVNET",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
         "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
