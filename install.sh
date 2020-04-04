@@ -2,8 +2,8 @@
 
 apt update
 apt install -y ubuntu-drivers-common apache2-utils nginx ocl-icd-opencl-dev software-properties-common certbot python-certbot-nginx
-add-apt-repository universe
-add-apt-repository ppa:certbot/certbot
+add-apt-repository -y universe
+add-apt-repository -y ppa:certbot/certbot
 
 
 export DEBIAN_FRONTEND=noninteractive
@@ -18,9 +18,11 @@ ADMINUSER="admin"
 PASSKEY=""
 TEAM="0"
 PASSWORD="password1"
-DNSNAME="foldingathome"
-RESOURCEGROUPLOCATION="westeurope"
-CLIENTURL="$DNSNAME.$RESOURCEGROUPLOCATION.cloudapp.azure.com"
+DNSNAME=""
+RESOURCEGROUPLOCATION=""
+
+
+echo "CLIENTURL Is : $CLIENTURL"
 
 for i in "$@"
 do
@@ -40,10 +42,18 @@ do
 			--adminuser=*)
 			ADMINUSER="${i#*=}"
 			;;
-			*)
+			--dnsname=*)
+			DNSNAME="${i#*=}"
 			;;
+			--resourcegrouplocation=*)
+			RESOURCEGROUPLOCATION="${i#*=}"
+			;;
+			*)
+
 	esac
 done
+
+CLIENTURL="$DNSNAME.$RESOURCEGROUPLOCATION.cloudapp.azure.com"
 
 echo "fahclient       fahclient/user  string  $USER
 fahclient       fahclient/autostart     boolean true
@@ -101,8 +111,8 @@ echo "server {
 " > /etc/nginx/sites-available/default
 
 #Install SSL Certs and let certbot update the nginx config
-echo "Creating certificate cor $CLIENTURL"
-certbot -n -d $CLIENTURL --nginx
+echo "Creating certificate for $CLIENTURL"
+certbot -n -d "$CLIENTURL" --nginx
 
 systemctl restart nginx
 
