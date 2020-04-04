@@ -14,6 +14,13 @@
                 "description": "The DNS prefix for the host. Must be unique on Azure."
             }
         },
+        "letsEncrytMail": {
+        "defaultValue": "NONE",
+           "type": "String",
+            "metadata": {
+                "description": "Email adress for Let's Encrypt Notifications. Optional."
+            } 
+        },
         "adminUsername": {
             "type": "String",
             "metadata": {
@@ -223,7 +230,7 @@
                 "autoUpgradeMinorVersion": true,
                 "settings": {
                     "fileUris": "[split('https://raw.githubusercontent.com/m0rgenthau/fahclient-azure-vm/master/install.sh', ' ')]",
-                    "commandToExecute": "[concat('bash install.sh --user=', parameters('fahUser'), ' --team=', parameters('fahTeam'), ' --passkey=', parameters('fahPasskey'), ' --password=', parameters('adminPassword'), ' --adminuser=', parameters('adminUsername'), ' --dnsname=', parameters('adminUsername'), ' --resourcegrouplocation=', resourceGroup().location)]"
+                    "commandToExecute": "[concat('bash install.sh --user=', parameters('fahUser'), ' --team=', parameters('fahTeam'), ' --passkey=', parameters('fahPasskey'), ' --password=', parameters('adminPassword'), ' --adminuser=', parameters('adminUsername'), ' --dnsname=', parameters('adminUsername'), ' --resourcegrouplocation=', resourceGroup().location, ' --letsencryptmail=', parameters('letsEncrytMail'))]"
                 }
             }
         },

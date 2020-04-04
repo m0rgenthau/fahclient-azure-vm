@@ -20,6 +20,7 @@ TEAM="0"
 PASSWORD="password1"
 DNSNAME=""
 RESOURCEGROUPLOCATION=""
+LETSENCRYPTMAIL="NONE"
 
 
 echo "CLIENTURL Is : $CLIENTURL"
@@ -47,6 +48,9 @@ do
 			;;
 			--resourcegrouplocation=*)
 			RESOURCEGROUPLOCATION="${i#*=}"
+			;;
+			--letsencryptmail=*)
+			LETSENCRYPTMAIL="${i#*=}"
 			;;
 			*)
 
@@ -111,8 +115,12 @@ echo "server {
 " > /etc/nginx/sites-available/default
 
 #Install SSL Certs and let certbot update the nginx config
-echo "Creating certificate for $CLIENTURL"
-certbot -n -d "$CLIENTURL" --nginx
+if [ "$LETSENCRYPTMAIL" = "NONE" ]; then
+    certbot -n -d "$CLIENTURL" --nginx --non-interactive --quiet --agree-tos --register-unsafely-without-email
+else
+	certbot -n -d "$CLIENTURL" --nginx --non-interactive --quiet --agree-tos -m "$LETSENCRYPTMAIL"
+fi
+
 
 systemctl restart nginx
 
